@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -5,7 +7,15 @@ from sqlalchemy import create_engine
 
 st.set_page_config(page_title="Dashboard Terremotos", layout="wide")
 
-engine = create_engine("mysql+pymysql://root:@localhost:3306/terremotos_db")
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = os.getenv("DB_PORT", "3306")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "")
+DB_NAME = os.getenv("DB_NAME", "terremotos_db")
+
+engine = create_engine(
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+)
 
 df = pd.read_sql("SELECT * FROM terremotos", engine)
 
