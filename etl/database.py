@@ -1,11 +1,17 @@
+from dotenv import load_dotenv
+import os
+
 from sqlalchemy import create_engine
 
+# Cargar variables del archivo .env
+load_dotenv()
+
 # Datos de conexión
-usuario = "root"
-password = ""
-host = "localhost"
-puerto = "3306"
-database = "terremotos_db"
+usuario = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+puerto = os.getenv("DB_PORT")
+database = os.getenv("DB_NAME")
 
 # Crear conexión
 engine = create_engine(
