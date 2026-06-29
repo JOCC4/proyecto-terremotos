@@ -1,0 +1,8 @@
+2026-06-28 23:08:11,411 - INFO - Inicio del pipeline ETL
+2026-06-28 23:08:11,411 - INFO - Leyendo dataset CSV
+2026-06-28 23:08:11,546 - INFO - Validando datos
+2026-06-28 23:08:11,617 - INFO - Transformando variables
+2026-06-28 23:08:11,634 - INFO - Guardando CSV procesado
+2026-06-28 23:08:11,771 - INFO - Conectando a MySQL
+2026-06-28 23:08:11,853 - INFO - Cargando datos en MySQL
+2026-06-28 23:08:13,150 - INFO - Pipeline ETL finalizado correctamente
