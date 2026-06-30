@@ -124,7 +124,7 @@ fig1 = px.histogram(
 
 st.plotly_chart(fig1, use_container_width=True)
 
-st.subheader("Vista operativa: magnitud promedio por país")
+st.subheader("Vista operativa: magnitud promedio por region")
 
 df_pais = (
     df_filtrado
